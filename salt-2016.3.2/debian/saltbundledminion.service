@@ -1,0 +1,15 @@
+[Unit]
+Description=The Salt Minion
+After=network.target
+
+[Service]
+Type=simple
+KillSignal=SIGTERM
+SendSIGKILL=yes
+TimeoutStopSec=10
+ExecStart=/usr/share/python/saltbundledminion/bin/python /usr/share/python/saltbundledminion/bin/salt-minion
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target
+

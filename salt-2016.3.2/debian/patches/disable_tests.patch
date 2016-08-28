@@ -1,0 +1,11 @@
+Disable tests in setup.py
+--- a/setup.py
++++ b/setup.py
+@@ -588,6 +588,7 @@
+         '''
+ 
+     def run(self):
++	sys.exit(0)
+         from subprocess import Popen
+         self.run_command('build')
+         build_cmd = self.get_finalized_command('build_ext')
