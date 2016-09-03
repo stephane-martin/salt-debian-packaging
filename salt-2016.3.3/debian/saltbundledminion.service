@@ -6,7 +6,7 @@ After=network.target
 Type=notify
 NotifyAccess=all
 LimitNOFILE=8192
-ExecStart=/usr/share/python/saltbundledminion/bin/salt-minion
+ExecStart=/usr/bin/salt-minion
 
 [Install]
 WantedBy=multi-user.target
