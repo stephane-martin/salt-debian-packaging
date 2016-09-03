@@ -2,7 +2,7 @@ Source: salt
 Section: admin
 Priority: optional
 Maintainer: Stephane Martin <stephane.martin@vesperal.eu>
-Build-Depends: debhelper (>= 9), apt, apt-utils, fakeroot, libapt-pkg-dev, libsystemd-daemon-dev, python, python-dev, python2.7, python2.7-dev, python-distutils-extra, python-apt, libyaml-dev, libssl-dev, dh-virtualenv (>= 0.11)
+Build-Depends: debhelper (>= 9), apt, apt-utils, fakeroot, libapt-pkg-dev, libsystemd-daemon-dev, libsystemd-login-dev, libsystemd-journal-dev, libsystemd-dev, python, python-dev, python2.7, python2.7-dev, python-distutils-extra, python-apt, libyaml-dev, libssl-dev, dh-virtualenv (>= 0.11)
 Standards-Version: 3.9.6
 Homepage: https://github.com/saltstack/salt
 
