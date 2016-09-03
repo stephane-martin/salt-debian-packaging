@@ -1,2 +1,0 @@
-misc:Depends=init-system-helpers (>= 1.18~)
-shlibs:Depends=libapt-inst1.5 (>= 0.8.0), libapt-pkg4.12 (>= 1.0.9.8.3), libc6 (>= 2.15), libgcc1 (>= 1:4.1.1), libgmp10, libstdc++6 (>= 4.9), libyaml-0-2, zlib1g (>= 1:1.2.0)
