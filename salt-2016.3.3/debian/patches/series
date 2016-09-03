@@ -1,2 +1,3 @@
 requirements.patch
 disable_tests.patch
+version.patch
