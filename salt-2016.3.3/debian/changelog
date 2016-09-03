@@ -1,3 +1,9 @@
+salt (2016.3.3-5) stable; urgency=medium
+
+  * Compile and install the systemd python module
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Sat, 03 Sep 2016 18:43:30 +0200
+
 salt (2016.3.3-4) stable; urgency=medium
 
   * Call directly /usr/bin/salt-minion to avoid a fork
