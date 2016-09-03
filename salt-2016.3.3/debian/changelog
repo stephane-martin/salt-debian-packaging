@@ -1,3 +1,10 @@
+salt (2016.3.3-3) stable; urgency=medium
+
+  * Fix "saltbundledminion.service: Got notification message from PID XXX,
+    but reception only permitted for main PID YYY"
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Sat, 03 Sep 2016 17:44:46 +0200
+
 salt (2016.3.3-2) stable; urgency=medium
 
   * Trying to fix systemd notify
