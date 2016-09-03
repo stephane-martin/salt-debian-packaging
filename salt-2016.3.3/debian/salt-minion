@@ -1,2 +1,9 @@
-#!/bin/sh
-/usr/share/python/saltbundledminion/bin/python /usr/share/python/saltbundledminion/bin/salt-minion "$@"
+#!/usr/share/python/saltbundledminion/bin/python
+"""
+This script is used to kick off a salt minion daemon
+"""
+
+from salt.scripts import salt_minion
+
+if __name__ == '__main__':
+    salt_minion()
