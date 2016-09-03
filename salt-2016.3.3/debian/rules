@@ -13,7 +13,7 @@
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 override_dh_virtualenv:
-	dh_virtualenv --setuptools --no-test
+	dh_virtualenv --extra-pip-arg='--no-binary' --extra-pip-arg=':all:' --setuptools --no-test
 
 %:
 	dh $@ --with python-virtualenv --with=systemd 
