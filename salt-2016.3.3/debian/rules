@@ -16,5 +16,5 @@ override_dh_virtualenv:
 	dh_virtualenv --setuptools --no-test
 
 %:
-	dh $@ --with python-virtualenv --with=systemd 
+	dh $@ --with python-virtualenv
 
