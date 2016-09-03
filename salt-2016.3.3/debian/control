@@ -2,14 +2,14 @@ Source: salt
 Section: admin
 Priority: optional
 Maintainer: Stephane Martin <stephane.martin@vesperal.eu>
-Build-Depends: debhelper (>= 9), apt, apt-utils, fakeroot, libapt-pkg-dev, libsystemd-daemon-dev, libsystemd-login-dev, libsystemd-journal-dev, libsystemd-dev, python, python-dev, python2.7, python2.7-dev, python-distutils-extra, python-apt, libyaml-dev, libssl-dev, dh-virtualenv (>= 0.11)
+Build-Depends: debhelper (>= 9), apt, apt-utils, fakeroot, libapt-pkg-dev, python, python-dev, python2.7, python2.7-dev, python-distutils-extra, python-apt, libyaml-dev, libssl-dev, dh-virtualenv (>= 0.11)
 Standards-Version: 3.9.6
 Homepage: https://github.com/saltstack/salt
 
 Package: saltbundledminion
 Architecture: amd64
 Pre-Depends: dpkg, python, python2.7, python-minimal, python2.7-minimal, ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${python:Depends}, ${misc:Depends}, libyaml-0-2, libssl1.0.0, libsystemd0, lsb-release
+Depends: ${shlibs:Depends}, ${python:Depends}, ${misc:Depends}, libyaml-0-2, libssl1.0.0, lsb-release
 Description: Salt Minion
  salt-minion with bundled dependencies
 
