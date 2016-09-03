@@ -1,0 +1,61 @@
+salt (2016.3.2-4) stable; urgency=medium
+
+  * Added redis and hiredis as deps
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Fri, 26 Aug 2016 01:29:27 +0200
+
+salt (2016.3.2-3) stable; urgency=medium
+
+  * Added lsb_release python module as a dependency
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Wed, 10 Aug 2016 18:08:59 +0200
+
+salt (2016.3.2-2) unstable; urgency=medium
+
+  * Tweaked dependencies
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Sat, 06 Aug 2016 23:00:41 +0200
+
+salt (2016.3.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Sat, 06 Aug 2016 19:26:13 +0200
+
+salt (2016.3.1-1ubuntu6) unstable; urgency=medium
+
+  * Workaround 'python-apt not installable by pip'
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 01 Aug 2016 14:33:55 +0200
+
+salt (2016.3.1-1ubuntu5) unstable; urgency=medium
+
+  * added missing build dep python-distutils-extra
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 01 Aug 2016 13:29:41 +0200
+
+salt (2016.3.1-1ubuntu4) unstable; urgency=medium
+
+  * added build dependencies for python-apt
+  * minor tweaks in systemd service
+  * added salt-call in /usr/bin
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 01 Aug 2016 13:17:45 +0200
+
+salt (2016.3.1-1ubuntu2) unstable; urgency=medium
+
+  * added python-apt dependency
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 01 Aug 2016 12:52:05 +0200
+
+salt (2016.3.1-1ubuntu1) unstable; urgency=medium
+
+  * updated minion configuration 
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 01 Aug 2016 12:40:26 +0200
+
+salt (2016.3.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 04 Jul 2016 16:51:58 +0200

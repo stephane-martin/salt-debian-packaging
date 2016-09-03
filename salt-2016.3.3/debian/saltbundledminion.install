@@ -1,0 +1,6 @@
+debian/etc/minion etc/salt/
+debian/salt-minion usr/bin/
+debian/salt-call usr/bin/
+debian/python-apt/* usr/share/python/saltbundledminion/lib/python2.7/site-packages
+debian/lsb_release.py usr/share/python/saltbundledminion/lib/python2.7/site-packages/
+
