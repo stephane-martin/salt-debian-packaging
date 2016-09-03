@@ -1,10 +1,7 @@
 saltbundledminion for Debian
----------------------------
+----------------------------
 
-<this file describes information about the source package, see Debian policy
-manual section 4.14. You WILL either need to modify or delete this file>
+Packaging the salt minion using dh-virtualenv.
 
-
-
- -- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 04 Jul 2016 16:51:58 +0200
+-- Stephane Martin <stephane.martin@vesperal.eu>  Mon, 04 Jul 2016 16:51:58 +0200
 
