@@ -84,18 +84,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-develop-eggs/
-eggs/
-.eggs/
-*.egg-info/
-.installed.cfg
-*.egg
-
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
