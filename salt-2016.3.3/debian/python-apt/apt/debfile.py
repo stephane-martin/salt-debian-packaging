@@ -27,7 +27,7 @@ import os
 import sys
 
 from apt_pkg import gettext as _
-from io import StringIO
+from io import BytesIO
 
 
 class NoDebArchiveException(IOError):
@@ -92,7 +92,7 @@ class DebPackage(object):
 
     @property
     def control_filelist(self):
-        """ return the list of files in control.tar.gt """
+        """ return the list of files in control.tar.gz """
         control = []
         try:
             self._debfile.control.go(
@@ -458,10 +458,6 @@ class DebPackage(object):
         pkgname = self._sections["Package"]
         architecture = self._sections["Architecture"]
 
-        # Architecture all gets mapped to the native architecture internally
-        if architecture == 'all':
-            architecture = apt_pkg.config.find("APT::Architecture")
-
         # Arch qualify the package name
         pkgname = ":".join([pkgname, architecture])
 
@@ -485,7 +481,7 @@ class DebPackage(object):
                     return self.VERSION_OUTDATED
         return self.VERSION_NONE
 
-    def check(self):
+    def check(self, allow_downgrade=False):
         """Check if the package is installable."""
         self._dbg(3, "check")
 
@@ -508,7 +504,8 @@ class DebPackage(object):
                 return False
 
         # check version
-        if self.compare_to_version_in_cache() == self.VERSION_OUTDATED:
+        if (not allow_downgrade and
+            self.compare_to_version_in_cache() == self.VERSION_OUTDATED):
             if self._cache[self.pkgname].installed:
                 # the deb is older than the installed
                 self._failure_string = _(
@@ -640,9 +637,9 @@ class DebPackage(object):
         data = part.extractdata(name)
         # check for zip content
         if name.endswith(".gz") and auto_decompress:
-            io = StringIO(data)
+            io = BytesIO(data)
             gz = gzip.GzipFile(fileobj=io)
-            data = _("Automatically decompressed:\n\n")
+            data = _("Automatically decompressed:\n\n").encode("utf-8")
             data += gz.read()
         # auto-convert to hex
         try:
@@ -723,15 +720,11 @@ class DscSrcPackage(DebPackage):
         """Open the package."""
         depends_tags = ["Build-Depends", "Build-Depends-Indep"]
         conflicts_tags = ["Build-Conflicts", "Build-Conflicts-Indep"]
-        fobj = open(file)
+        fd = apt_pkg.open_maybe_clear_signed_file(file)
+        fobj = os.fdopen(fd)
         tagfile = apt_pkg.TagFile(fobj)
         try:
             for sec in tagfile:
-                # we only care about the stanza with the "Format:" tag, the
-                # rest is gpg signature noise. we should probably have
-                # bindings for apts OpenMaybeClearsignedFile()
-                if "Format" not in sec:
-                    continue
                 for tag in depends_tags:
                     if tag not in sec:
                         continue
