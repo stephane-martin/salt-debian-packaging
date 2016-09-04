@@ -1,3 +1,9 @@
+salt (2016.3.3-9) stable; urgency=medium
+
+  * Add missing .so files for python-apt:
+
+ -- Stephane Martin <stephane.martin@vesperal.eu>  Sun, 04 Sep 2016 19:23:30 +0200
+
 salt (2016.3.3-8) stable; urgency=medium
 
   * Report correct version of the salt minion
