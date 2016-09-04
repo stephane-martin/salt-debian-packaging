@@ -154,12 +154,6 @@ def _add_key_from_keyserver(keyid, keyserver, tmp_keyring_dir):
     if res != 0:
         raise AptKeyError("recv from '%s' failed for '%s'" % (
             keyserver, keyid))
-    # FIXME:
-    # - with gnupg 1.4.18 the downloaded key is actually checked(!),
-    #   i.e. gnupg will not import anything that the server sends
-    #   into the keyring, so the below checks are now redundant *if*
-    #   gnupg 1.4.18 is used
-
     # now export again using the long key id (to ensure that there is
     # really only this one key in our keyring) and not someone MITM us
     tmp_export_keyring = os.path.join(tmp_keyring_dir, "export-keyring.gpg")
@@ -192,11 +186,9 @@ def _add_key_from_keyserver(keyid, keyserver, tmp_keyring_dir):
     # what gnupg is using)
     signing_key_fingerprint = keyid.replace("0x", "").upper()
     if got_fingerprint != signing_key_fingerprint:
-        # make the error match what gnupg >= 1.4.18 will output when
-        # it checks the key itself before importing it
         raise AptKeyError(
-            "recv from '%s' failed for '%s'" % (
-                keyserver, signing_key_fingerprint))
+            "Fingerprints do not match, not importing: '%s' != '%s'" % (
+                signing_key_fingerprint, got_fingerprint))
     # finally add it
     add_key_from_file(tmp_export_keyring)
 
